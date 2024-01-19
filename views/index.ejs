@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="html">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bio i Göteborg - Kino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/main.css?v=1" />
+    <script src="/menu.js" defer></script>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <section class="hero"></section>
+        <section class="spotlight"></section>
+        <section class="news"></section>
+        <section class="reviews">
+          <% if(reviews.length > 0) { %>
+            <% reviews.forEach(review => { %>
+              <h2 class = reviews__title><%= review.title%></h2>
+              <p class="reviews__desc"><%= review.description%></p>
+              <span class="reviews__name"><%= review.name%></span>
+            <% }); %>
+          <% } %>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

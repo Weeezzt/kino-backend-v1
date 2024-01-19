@@ -1,0 +1,24 @@
+.reviews {
+    background-color: $colorTwo;
+    padding: 50px;
+    text-align: center;
+  
+    .reviews__title {
+      font-size: 28px;
+      font-weight: 700;
+      color: $colorFive;
+      margin-bottom: 10px;
+    }
+  
+    .reviews__desc {
+      font-size: 18px;
+      color: $colorFour;
+      margin-bottom: 20px;
+    }
+  
+    .reviews__name {
+      font-size: 16px;
+      color: $colorFive;
+      font-style: italic;
+    }
+  }

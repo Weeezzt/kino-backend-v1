@@ -1,10 +1,13 @@
 require('dotenv').config()
 require('express-async-errors')
-
 const path = require('path')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
+
+//View engine
+
+app.set('view engine', 'ejs')
 
 //router
 const router = require('./routes/router')

@@ -1,6 +1,6 @@
 const fullApiJson = [];
 getApi()
-  .then((data) => data.movies.forEach((challenge) => fullApiJson.push(challenge)))
+  .then((data) => data.forEach((challenge) => fullApiJson.push(challenge)))
   .then(randomHeroImage)
   .catch((err) => {
     console.log("errors: " + err.message);

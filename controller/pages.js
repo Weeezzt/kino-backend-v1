@@ -1,20 +1,13 @@
 const fs = require('fs/promises')
 const Movies = require('../models/moviesSchema')
+const reviews = require('../reviews')
 
-const readHtmlFile = async (fileName) => {
-    try {
-        const buf = await fs.readFile(fileName)
-        return buf.toString()
-    } catch (error) {
-        res.status(500).json({msg:error.message})
-    }
-}
 
 
 const indexController = async (req, res) => {
     try {
-        const html = await readHtmlFile('index.html')
-        res.status(200).send(html)
+        
+        res.status(200).render('index', {reviews})
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
@@ -32,8 +25,8 @@ const getAllMovies = async (req, res) => {
 
 const filmerController = async (req, res) => {
     try{
-        const html = await readHtmlFile('filmer.html')
-        res.status(200).send(html)
+        
+        res.status(200).render('filmer')
     }catch (error) {
         res.status(500).json({msg:error.message})
     }
@@ -41,8 +34,8 @@ const filmerController = async (req, res) => {
 
 const aboutUsController = async (req, res) => {
     try {
-        const html = await readHtmlFile('aboutUs.html')
-        res.status(200).send(html)
+        
+        res.status(200).render('aboutUs')
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
@@ -50,8 +43,7 @@ const aboutUsController = async (req, res) => {
 
 const newsEventsController = async (req, res) => {
     try {
-        const html = await readHtmlFile('newsEvents.html')
-        res.status(200).send(html)
+        res.status(200).render('newsEvents')
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
